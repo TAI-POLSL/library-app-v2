@@ -11,6 +11,8 @@ import MissingPage from './pages/MissingPage';
 import AdminTestPage from './pages/AdminTestPage';
 import EmployeeTestPage from './pages/EmployeeTestPage';
 
+import TableTestPage from './pages/TableTestPage';
+
 const ROLES = {
   ADMIN : 0,
   EMPLOYEE: 1,
@@ -35,6 +37,10 @@ function App() {
 
         <Route element={<RequireAuth allowedRoles={[ROLES.EMPLOYEE]} />}>
           <Route path="/test/employee" element={<EmployeeTestPage />} />
+        </Route>
+
+        <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN, ROLES.EMPLOYEE, ROLES.CLIENT]} />}>
+          <Route path="/test/table" element={<TableTestPage />} />
         </Route>
 
         <Route path="/unauthorized" element={<UnauthorizedPage />} />

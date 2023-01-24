@@ -37,6 +37,7 @@ const HomePage = () => {
         <section>
             <Link to='/test/admin'>Test admin</Link>
             <Link to='/test/employee'>Test Employee</Link>
+            <Link to='/test/table'>Test Table View</Link>
             <button onClick={handleLogout}>Logout</button>
         </section>
     )

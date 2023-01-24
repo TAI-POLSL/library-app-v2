@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #060e1d;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #3462c5;
+}
+
+tbody {
+  display: block;
+  height: calc(100vh - 325px);
+  overflow: auto;
+}
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;/* even columns width , fix width of table too*/
+}
+
