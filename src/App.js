@@ -20,6 +20,7 @@ import DeleteUserPage from './pages/DeleteUserPage';
 import DeleteBookPage from './pages/DeleteBookPage';
 import TableUsersPage from './pages/TableUsersPage';
 import RentBookPage from './pages/RentBookPage';
+import ActiveSessionsPage from './pages/ActiveSessionsPage';
 
 const ROLES = {
   ADMIN: 0,
@@ -60,6 +61,7 @@ function App() {
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN, ROLES.EMPLOYEE, ROLES.CLIENT]} />}>
           <Route path="/test/table" element={<SecurityOwnPages />} />
           <Route path="/test/books" element={<TableBookPage />} />
+          <Route path="/sessions/active" element={<ActiveSessionsPage />} />
         </Route>
 
         <Route path="/unauthorized" element={<UnauthorizedPage />} />
