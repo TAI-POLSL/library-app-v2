@@ -9,7 +9,7 @@ const AdminTestPage = () => {
                     <Link to="/create">Create user account</Link>
                 </span>
                 <span className="line">
-                    <Link to="/delete">Delete user account</Link>
+                    <Link to="/tableusers">Delete user account</Link>
                 </span>
             </p>
         </section>

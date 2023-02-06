@@ -17,9 +17,11 @@ import TableBookPage from './pages/TableBookPage';
 import AddBookPage from './pages/AddBookPage';
 import DeleteUserPage from './pages/DeleteUserPage';
 import DeleteBookPage from './pages/DeleteBookPage';
+import TableUsersPage from './pages/TableUsersPage';
+import RentBookPage from './pages/RentBookPage';
 
 const ROLES = {
-  ADMIN : 0,
+  ADMIN: 0,
   EMPLOYEE: 1,
   CLIENT: 2
 }
@@ -39,11 +41,13 @@ function App() {
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN]} />}>
           <Route path="/test/admin" element={<AdminTestPage />} />
           <Route path="/create" element={<SignUpPage />} />
+          <Route path="/tableusers" element={<TableUsersPage />} />
           <Route path="/delete" element={<DeleteUserPage />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.EMPLOYEE]} />}>
           <Route path="/test/employee" element={<EmployeeTestPage />} />
+          <Route path="/rentbooks" element={<RentBookPage />} />
           <Route path="/addbook" element={<AddBookPage />} />
           <Route path="/deletebook" element={<DeleteBookPage />} />
         </Route>

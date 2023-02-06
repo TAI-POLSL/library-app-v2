@@ -6,10 +6,7 @@ const EmployeeTestPage = () => {
             <Link to="/">EmployeeTestPage - back to home</Link>
             <p>
                 <span className="line">
-                    <Link to="/create/account">Create employee account</Link>
-                </span>
-                <span className="line">
-                    <Link to="/create/account">Create client account</Link>
+                    <Link to="/rentbooks">Rented books page</Link>
                 </span>
             </p>
         </section>

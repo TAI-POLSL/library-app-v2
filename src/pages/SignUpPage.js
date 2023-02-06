@@ -78,7 +78,7 @@ const SignUpPage = () => {
     }
 
     return (
-        authenticated === true ? <Navigate to="/login" state={{ from: location }} replace /> :
+        authenticated === true ? <Navigate to="/test/admin" state={{ from: location }} replace /> :
             <section>
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <h1>Sign In {authenticated}</h1>
