@@ -36,7 +36,7 @@ const SignUpPage = () => {
     const [firstName, setFirstName] = useState('Tomasz');
     const [lastName, setLastName] = useState('Depczynski');
     const [gender, setGender] = useState(0);
-    const [roles, setRoles] = useState(1);
+    const [roles, setRoles] = useState(2);
     const [email, setEmail] = useState('t.depczynski@gmail.com');
     const [streetAddress, setStreetAddress] = useState('Witkiewicza');
     const [postalCode, setPostalCode] = useState('44102');
@@ -51,7 +51,11 @@ const SignUpPage = () => {
         e.preventDefault();
 
         try {
-            var obj = JSON.stringify({ username: user, password: pwd, confirmPassword, firstName, lastName, gender, roles, email, streetAddress, postalCode, city, state });
+            var obj = JSON.stringify({ username: user, password: pwd, 
+                confirmPassword, firstName, lastName, 
+                gender: parseInt(gender), 
+                roles: parseInt(roles),
+                 email, streetAddress, postalCode, city, state });
             const response = await axios.post(
                 ACCOUNT_URL,
                 obj,
