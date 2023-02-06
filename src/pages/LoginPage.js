@@ -76,7 +76,7 @@ const LoginPage = () => {
         authenticated === true ? <Navigate to="/" state={{ from: location }} replace /> :
         <section>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In {authenticated}</h1>
+            <h1>Sign In {authenticated} (jeśli strona źle się otwiera wyczyść cookie)</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <input
