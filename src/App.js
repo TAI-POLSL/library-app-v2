@@ -12,6 +12,7 @@ import AdminTestPage from './pages/AdminTestPage';
 import EmployeeTestPage from './pages/EmployeeTestPage';
 
 import SecurityOwnPages from './pages/SecurityOwnPages';
+import SecurityAllPages from './pages/SecurityAllPages';
 import SignUpPage from './pages/SignUpPage';
 import TableBookPage from './pages/TableBookPage';
 import AddBookPage from './pages/AddBookPage';
@@ -50,6 +51,10 @@ function App() {
           <Route path="/rentbooks" element={<RentBookPage />} />
           <Route path="/addbook" element={<AddBookPage />} />
           {/* <Route path="/deletebook" element={<DeleteBookPage />} /> */}
+        </Route>
+
+        <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN]} />}>
+          <Route path="/test/table/all" element={<SecurityAllPages />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN, ROLES.EMPLOYEE, ROLES.CLIENT]} />}>
