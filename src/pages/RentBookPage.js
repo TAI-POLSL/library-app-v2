@@ -28,14 +28,24 @@ const RentBookPage = () => {
         fetchData();
     }, [fetchData]);
 
+    function parseDate(date) {
+        return new Date(date).toISOString().replace('-', '/').split('T')[0].replace('-', '/');
+    }
+
     const renderItems = (arr) => {
         if (arr) {
             return arr.map((item, i) => {
                 return (
                     <tr key={item.id}>
                         <td>{item.id}</td>
-                        <td>{item.username}</td>
+                        <td>{item.user.id}</td>
+                        <td>{item.user.username}</td>
+                        <td>{item.user.firstName}</td>
+                        <td>{item.user.lastName}</td>
+                        <td>{item.author}</td>
                         <td>{item.title}</td>
+                        <td>{parseDate(item.startDate)}</td>
+                        <td>{parseDate(item.endDate)}</td>
                     </tr>
                 );
             });
@@ -50,23 +60,26 @@ const RentBookPage = () => {
                 <thead>
                     <tr>
                         <td>Id</td>
+                        <td>User Id</td>
                         <td>Username</td>
+                        <td>User first name</td>
+                        <td>User last name</td>
+                        <td>Author</td>
                         <td>Title</td>
+                        <td>Start date</td>
+                        <td>End date</td>
                     </tr>
                 </thead>
 
                 <tfoot>
                     <tr>
-                        <td colspan="5">
+                        <td colSpan="5">
                             {/* <button onClick={() => { navigate('/addbook') }}>Add</button>
                             <button onClick={() => { navigate('/deletebook') }}>Delete</button> */}
                             {/* <button onClick={() => getBooks()}>Check working request</button> */}
                         </td>
                     </tr>
                 </tfoot>
-
-
-
                 <tbody>
                     {renderItems(fetch)}
                 </tbody>

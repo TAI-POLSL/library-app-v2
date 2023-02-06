@@ -35,10 +35,10 @@ const HomePage = () => {
 
     return (
         <section>
-            <Link to='/test/admin'>Test admin</Link>
-            <Link to='/test/employee'>Test Employee</Link>
-            <Link to='/test/table'>Test Table View</Link>
-            <Link to='/test/books'>Test Books View</Link>
+            <Link to='/test/admin'>Admin pages</Link>
+            <Link to='/test/employee'>Employee pages</Link>
+            <Link to='/test/table'>Security own View</Link>
+            <Link to='/test/books'>Books View</Link>
             <button onClick={handleLogout}>Logout</button>
         </section>
     )

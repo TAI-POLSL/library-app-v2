@@ -4,7 +4,7 @@ import { useRef, useState, useEffect, useCallback } from 'react';
 
 const SECURITY_SESSION_URL = '/api/1.0.0/library/logs/security/own';
 
-const TableTestPage = () => {
+const SecurityOwnPages = () => {
     const navigate = useNavigate();
 
     const [fetch, setFetch] = useState(null)
@@ -35,9 +35,10 @@ const TableTestPage = () => {
                 return (
                 <tr key={item.id}>
                     <td>{item.id}</td>
-                    <td>{item.username}</td>
-                    <td>{item.ip}</td>
                     <td>{item.logTime}</td>
+                    <td>{item.ip}</td>
+                    <td>{item.securityOperation}</td>
+                    <td>{item.description}</td>
                 </tr>
                 );
             });
@@ -46,15 +47,16 @@ const TableTestPage = () => {
 
     return (
         <section style={{minWidth: 'calc(100vw - 75px)', height: 'calc(100vh - 75px)', overflow: 'hidden'}}>
-            <h1>History of sessions</h1>
+            <h1>Security audit</h1>
             <br />
             <table>
                 <thead>
                     <tr>
                         <td>Id</td>
-                        <td>Username</td>
+                        <td>Log time</td>
                         <td>IP</td>
-                        <td>Loggin at</td>
+                        <td>Operation</td>
+                        <td>Descripton</td>
                     </tr>
                 </thead>
 
@@ -74,4 +76,4 @@ const TableTestPage = () => {
     )
 }
 
-export default TableTestPage
+export default SecurityOwnPages

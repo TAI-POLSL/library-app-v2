@@ -11,7 +11,7 @@ import MissingPage from './pages/MissingPage';
 import AdminTestPage from './pages/AdminTestPage';
 import EmployeeTestPage from './pages/EmployeeTestPage';
 
-import TableTestPage from './pages/TableTestPage';
+import SecurityOwnPages from './pages/SecurityOwnPages';
 import SignUpPage from './pages/SignUpPage';
 import TableBookPage from './pages/TableBookPage';
 import AddBookPage from './pages/AddBookPage';
@@ -53,7 +53,7 @@ function App() {
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN, ROLES.EMPLOYEE, ROLES.CLIENT]} />}>
-          <Route path="/test/table" element={<TableTestPage />} />
+          <Route path="/test/table" element={<SecurityOwnPages />} />
           <Route path="/test/books" element={<TableBookPage />} />
         </Route>
 
