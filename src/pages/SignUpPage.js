@@ -13,6 +13,14 @@ const SignUpPage = () => {
     const location = useLocation();
 
     const [authenticated, setAuthenticated] = useState(() => {
+        // Zdalnie
+        // try {
+        //     var response =  axios.head(SESSION_URL, { withCredentials: true})
+        //     return ( response.status === 200)
+        // } catch (error) {
+        //     return (false);
+        // }
+        // Lokalnie
         const cookies = new Cookies();
         var res = cookies.get('STORAGE');
         if(res) {
