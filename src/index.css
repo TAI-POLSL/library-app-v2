@@ -65,6 +65,7 @@ a, a:visited {
 
 input[type="text"],
 input[type="password"],
+input[type="number"],
 button,
 textarea {
   font-family: 'Nunito', sans-serif;
@@ -118,6 +119,14 @@ button {
 .errmsg {
     background-color: lightpink;
     color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.msg {
+    background-color: rgb(17, 209, 43);
+    color: rgb(5, 5, 5);
     font-weight: bold;
     padding: 0.5rem;
     margin-bottom: 0.5rem;

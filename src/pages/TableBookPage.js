@@ -120,7 +120,7 @@ const TableBookPage = () => {
 
                 <tfoot>
                     <tr>
-                        <td colspan="5">
+                        <td colSpan="5">
                             <button onClick={() => { navigate('/addbook') }}>Add</button>
                             <button onClick={() => { navigate('/deletebook') }}>Delete</button>
                             {/* <button onClick={() => getBooks()}>Check working request</button> */}

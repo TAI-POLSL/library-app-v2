@@ -49,7 +49,7 @@ function App() {
           <Route path="/test/employee" element={<EmployeeTestPage />} />
           <Route path="/rentbooks" element={<RentBookPage />} />
           <Route path="/addbook" element={<AddBookPage />} />
-          <Route path="/deletebook" element={<DeleteBookPage />} />
+          {/* <Route path="/deletebook" element={<DeleteBookPage />} /> */}
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN, ROLES.EMPLOYEE, ROLES.CLIENT]} />}>
