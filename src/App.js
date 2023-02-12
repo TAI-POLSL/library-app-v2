@@ -21,6 +21,7 @@ import DeleteBookPage from './pages/DeleteBookPage';
 import TableUsersPage from './pages/TableUsersPage';
 import RentBookPage from './pages/RentBookPage';
 import ActiveSessionsPage from './pages/ActiveSessionsPage';
+import LogoutAction from './LogoutAction';
 
 const ROLES = {
   ADMIN: 0,
@@ -38,6 +39,7 @@ function App() {
 
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN, ROLES.EMPLOYEE, ROLES.CLIENT]} />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/logout" element={<LogoutAction />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={[ROLES.ADMIN]} />}>

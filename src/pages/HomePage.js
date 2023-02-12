@@ -16,18 +16,7 @@ const HomePage = () => {
         e.preventDefault();
 
         try {
-            await axios.delete(
-                LOGOUT_URL,
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-
-            const cookies = new Cookies();
-            cookies.remove('STORAGE', { path: '/' });
-
-            navigate("/login");
+            navigate("/logout");
         } catch (err) {
             console.log(err)
         }
